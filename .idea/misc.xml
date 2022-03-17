@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/edt_background.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/ic_baseline_local_fire_department_24.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/message_box_background.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/send.xml" value="0.1455" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21" />
