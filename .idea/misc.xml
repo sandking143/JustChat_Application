@@ -6,7 +6,9 @@
         <entry key="app/src/main/res/drawable/edt_background.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/ic_baseline_local_fire_department_24.xml" value="0.1235" />
         <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.14221014492753623" />
+        <entry key="app/src/main/res/layout/user_layout.xml" value="0.17798913043478262" />
       </map>
     </option>
   </component>
