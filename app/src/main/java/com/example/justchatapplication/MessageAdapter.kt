@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import java.lang.Exception
 
 class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
+     var isRecived : Boolean = true
     val ITEM_SENT = 1
     val ITEM_RECEIVE = 2
 
@@ -19,10 +20,11 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
         if (viewType == 1) {
-
+            isRecived = true
             val view: View = LayoutInflater.from(context).inflate(R.layout.receive, parent, false)
             return ReceiveViewHolder(view)
         } else {
+            isRecived = false
             val view: View = LayoutInflater.from(context).inflate(R.layout.sent, parent, false)
             return SentViewHolder(view)
 
@@ -32,21 +34,19 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) 
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        try {
+            val currentMessage = messageList[position]
 
-        val currentMessage = messageList[position]
+            if (isRecived) {
+                val viewHolder = holder as ReceiveViewHolder
+                holder.receiveMessage.text = currentMessage.message
+            } else {
+                val viewHolder = holder as SentViewHolder
+                holder.sentMessage.text = currentMessage.message
+            }
 
-        if (holder.javaClass == SentViewHolder::javaClass) {
-
-
-            val viewHolder = holder as SentViewHolder
-            holder.sentMessage.text = currentMessage.message
-
-
-        } else {
-            val viewHolder = holder as ReceiveViewHolder
-            holder.receiveMessage.text = currentMessage.message
+        }catch (e: Exception){
         }
-
     }
 
 
@@ -54,10 +54,8 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) 
         val currentMessage = messageList[position]
 
         if (FirebaseAuth.getInstance().currentUser?.uid.equals(currentMessage.senderId)) {
-
             return ITEM_SENT
         } else {
-
             return ITEM_RECEIVE
         }
     }

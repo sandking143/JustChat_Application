@@ -7,7 +7,6 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/chat_box_color"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp">
@@ -17,11 +16,12 @@
             android:id="@+id/txt_receive_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
             android:text="This is Sent Message"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:textSize="18sp">
+            android:textSize="18sp"
+            android:textStyle="bold">
 
         </TextView>
 

@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/message_box_background"
+
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp">
 
@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="This is Receive Message"
+            android:background="@color/white"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:padding="10dp"

@@ -37,7 +37,9 @@
         android:background="@drawable/edt_background"
         android:hint="Enter Your Password"
         android:paddingLeft="10dp"
-        android:textSize="30dp">
+        android:password="true"
+        android:textSize="30dp"
+        tools:ignore="Deprecated">
 
     </EditText>
 
