@@ -12,19 +12,19 @@ import java.lang.Exception
 class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-     var isRecived : Boolean = true
-    val ITEM_SENT = 1
-    val ITEM_RECEIVE = 2
+     var isReceived : Boolean = true
+     val ITEM_SENT = 1
+     val ITEM_RECEIVE = 2
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
         if (viewType == 1) {
-            isRecived = true
+            isReceived = true
             val view: View = LayoutInflater.from(context).inflate(R.layout.receive, parent, false)
             return ReceiveViewHolder(view)
         } else {
-            isRecived = false
+            isReceived = false
             val view: View = LayoutInflater.from(context).inflate(R.layout.sent, parent, false)
             return SentViewHolder(view)
 
@@ -37,7 +37,7 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) 
         try {
             val currentMessage = messageList[position]
 
-            if (isRecived) {
+            if (isReceived) {
                 val viewHolder = holder as ReceiveViewHolder
                 holder.receiveMessage.text = currentMessage.message
             } else {
