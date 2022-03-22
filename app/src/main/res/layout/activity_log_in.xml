@@ -35,6 +35,7 @@
         android:layout_below="@id/edt_email"
         android:layout_marginTop="10dp"
         android:background="@drawable/edt_background"
+        android:password="true"
         android:hint="Enter Your Password"
         android:paddingLeft="10dp"
         android:textSize="30dp"

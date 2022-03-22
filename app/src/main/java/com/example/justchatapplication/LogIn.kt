@@ -65,22 +65,19 @@ class LogIn : AppCompatActivity() {
 
 
             if (checkBox.isChecked){
-                editor.putString(getString(R.string.checkBox), "True")
-                editor.apply()
+                editor.putString("check", "True")
                 strName = edtEmail.text.toString()
                 editor.putString(getString(R.string.edtEmail), strName)
-                editor.commit()
                 strPassword = edtPassword.text.toString()
-                editor.putString(getString(R.string.edtPassword), strPassword)
-                editor.commit()
+                editor.putString("password", strPassword)
+                editor.apply()
 
             }else {
                 editor.putString(getString(R.string.checkBox), "False")
-                editor.commit()
                 editor.putString(getString(R.string.edtEmail), "")
-                editor.commit()
                 editor.putString(getString(R.string.edtPassword), "")
-                editor.commit()
+                editor.apply()
+
             }
 
 
@@ -109,12 +106,12 @@ class LogIn : AppCompatActivity() {
 
     }
     private fun checkSharedPreference() {
-        strCheckBox = sharedPreferences.getString(getString(R.string.checkBox), "False").toString()
-        strName = sharedPreferences.getString(getString(R.string.edtEmail), "").toString()
-        strPassword = sharedPreferences.getString(getString(R.string.edtPassword), "").toString()
-        edtEmail.setText(strName)
-        edtPassword.setText(strPassword)
-        checkBox.isChecked = strCheckBox == "True"
+            strCheckBox = sharedPreferences.getString("check", "False").toString()
+            strName = sharedPreferences.getString(getString(R.string.edtEmail), "").toString()
+            strPassword = sharedPreferences.getString("password", "").toString()
+            edtEmail.setText(strName)
+            edtPassword.setText(strPassword)
+            checkBox.isChecked = strCheckBox == "True"
 
 
     }
